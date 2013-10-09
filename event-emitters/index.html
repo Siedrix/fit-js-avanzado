@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Event Emitter</title>
+
+	<script type="text/javascript" src="/EventTarget.js"></script>
+	<script type="text/javascript" >	
+	var target = new EventTarget();
+
+	function handleEvent(event){
+		console.log(event.type, event);
+	};
+
+	target.addListener("foo", handleEvent);
+
+	target.fire("foo");
+	target.fire({
+		type : "foo",
+		extraData : true
+	});
+	</script>
+</head>
+<body>
+
+</body>
+</html>
